@@ -14,13 +14,13 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
 
 julia&gt; is_smooth(toric_ambient_space(t))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/constructors.jl#L36">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.GenericGlobalTateModelOverProjectiveSpace-Tuple{}" href="#FTheoryTools.GenericGlobalTateModelOverProjectiveSpace-Tuple{}"><code>FTheoryTools.GenericGlobalTateModelOverProjectiveSpace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">GenericGlobalTateModelOverProjectiveSpace()</code></pre><p>This method constructs a global Tate model over the 3-dimensional projective space.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/constructors.jl#L36">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.GenericGlobalTateModelOverProjectiveSpace-Tuple{}" href="#FTheoryTools.GenericGlobalTateModelOverProjectiveSpace-Tuple{}"><code>FTheoryTools.GenericGlobalTateModelOverProjectiveSpace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">GenericGlobalTateModelOverProjectiveSpace()</code></pre><p>This method constructs a global Tate model over the 3-dimensional projective space.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; GenericGlobalTateModelOverProjectiveSpace()
-A global Tate model</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/constructors.jl#L144">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.SpecificGlobalTateModel-Tuple{Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, Oscar.AbstractNormalToricVariety}" href="#FTheoryTools.SpecificGlobalTateModel-Tuple{Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, Oscar.AbstractNormalToricVariety}"><code>FTheoryTools.SpecificGlobalTateModel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">SpecificGlobalTateModel(ais::Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, base::Oscar.AbstractNormalToricVariety)</code></pre><p>This method operates analogously to <code>GenericGlobalTateModel(base::Oscar.AbstractNormalToricVariety)</code>. The only difference is that the Tate sections <span>$a_i$</span> can be specified with non-generic values.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+A global Tate model over a concrete base</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/constructors.jl#L144">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.SpecificGlobalTateModel-Tuple{Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, Oscar.AbstractNormalToricVariety}" href="#FTheoryTools.SpecificGlobalTateModel-Tuple{Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, Oscar.AbstractNormalToricVariety}"><code>FTheoryTools.SpecificGlobalTateModel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">SpecificGlobalTateModel(ais::Vector{MPolyElem_dec{fmpq, fmpq_mpoly}}, base::Oscar.AbstractNormalToricVariety)</code></pre><p>This method operates analogously to <code>GenericGlobalTateModel(base::Oscar.AbstractNormalToricVariety)</code>. The only difference is that the Tate sections <span>$a_i$</span> can be specified with non-generic values.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -45,10 +45,10 @@ julia&gt; a4 = sum([rand(Int) * b for b in basis_of_global_sections(anticanonica
 julia&gt; a6 = sum([rand(Int) * b for b in basis_of_global_sections(anticanonical_bundle(base)^6)]);
 
 julia&gt; t = SpecificGlobalTateModel([a1, a2, a3, a4, a6], base)
-A global Tate model
+A global Tate model over a concrete base
 
 julia&gt; is_smooth(toric_ambient_space(t))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/constructors.jl#L161">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a1-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a1-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a1</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a1(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_1$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/constructors.jl#L161">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a1-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a1-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a1</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a1(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_1$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -63,26 +63,9 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
 
-julia&gt; tate_section_a1(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a2-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a2-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a2</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a2(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_2$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
-
-julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
-A normal toric variety
-
-julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
-A normal toric variety
-
-julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
-A normal toric variety
-
-julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
-A normal toric variety
-
-julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
-
-julia&gt; tate_section_a2(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L35">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a3-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a3-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a3</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a3(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_3$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+julia&gt; tate_section_a1(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a2-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a2-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a2</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a2(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_2$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -97,26 +80,9 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
 
-julia&gt; tate_section_a3(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L65">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a4-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a4-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a4</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a4(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_4$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
-
-julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
-A normal toric variety
-
-julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
-A normal toric variety
-
-julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
-A normal toric variety
-
-julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
-A normal toric variety
-
-julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
-
-julia&gt; tate_section_a4(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L95">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a6-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a6-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a6</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a6(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_6$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+julia&gt; tate_section_a2(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L35">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a3-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a3-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a3</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a3(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_3$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -131,26 +97,9 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
 
-julia&gt; tate_section_a6(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L125">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_polynomial-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_polynomial-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_polynomial(t::GlobalTateModel)</code></pre><p>Return the Tate polynomial of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
-
-julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
-A normal toric variety
-
-julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
-A normal toric variety
-
-julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
-A normal toric variety
-
-julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
-A normal toric variety
-
-julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
-
-julia&gt; tate_polynomial(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L159">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_base_space-Tuple{GlobalTateModel}" href="#FTheoryTools.toric_base_space-Tuple{GlobalTateModel}"><code>FTheoryTools.toric_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_base_space(t::GlobalTateModel)</code></pre><p>Return the toric base space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+julia&gt; tate_section_a3(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L65">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a4-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a4-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a4</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a4(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_4$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -165,10 +114,61 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
+
+julia&gt; tate_section_a4(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L95">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a6-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_section_a6-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_section_a6</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a6(t::GlobalTateModel)</code></pre><p>Return the Tate section <span>$a_6$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+
+julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
+A normal toric variety
+
+julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
+A normal toric variety
+
+julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
+A normal toric variety
+
+julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
+A normal toric variety
+
+julia&gt; t = GenericGlobalTateModel(base)
+A global Tate model over a concrete base
+
+julia&gt; tate_section_a6(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L125">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_polynomial-Tuple{GlobalTateModel}" href="#FTheoryTools.tate_polynomial-Tuple{GlobalTateModel}"><code>FTheoryTools.tate_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_polynomial(t::GlobalTateModel)</code></pre><p>Return the Tate polynomial of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+
+julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
+A normal toric variety
+
+julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
+A normal toric variety
+
+julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
+A normal toric variety
+
+julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
+A normal toric variety
+
+julia&gt; t = GenericGlobalTateModel(base)
+A global Tate model over a concrete base
+
+julia&gt; tate_polynomial(t);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L159">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_base_space-Tuple{GlobalTateModel}" href="#FTheoryTools.toric_base_space-Tuple{GlobalTateModel}"><code>FTheoryTools.toric_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_base_space(t::GlobalTateModel)</code></pre><p>Return the toric base space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+
+julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
+A normal toric variety
+
+julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
+A normal toric variety
+
+julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
+A normal toric variety
+
+julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
+A normal toric variety
+
+julia&gt; t = GenericGlobalTateModel(base)
+A global Tate model over a concrete base
 
 julia&gt; toric_base_space(t)
-A normal, 3-dimensional toric variety without torusfactor</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L193">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_ambient_space-Tuple{GlobalTateModel}" href="#FTheoryTools.toric_ambient_space-Tuple{GlobalTateModel}"><code>FTheoryTools.toric_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_ambient_space(t::GlobalTateModel)</code></pre><p>Return the toric ambient space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+A normal, 3-dimensional toric variety without torusfactor</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L193">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_ambient_space-Tuple{GlobalTateModel}" href="#FTheoryTools.toric_ambient_space-Tuple{GlobalTateModel}"><code>FTheoryTools.toric_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_ambient_space(t::GlobalTateModel)</code></pre><p>Return the toric ambient space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -183,10 +183,10 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; t = GenericGlobalTateModel(base)
-A global Tate model
+A global Tate model over a concrete base
 
 julia&gt; toric_ambient_space(t)
 A normal toric variety
 
 julia&gt; is_smooth(toric_ambient_space(t))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModels/attributes.jl#L224">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../WeierstrassGeneralBase/">« Global Weierstrass models</a><a class="docs-footer-nextpage" href="../TateGeneralBase/">Global Tate models without specified base space »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 08:46">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModels/attributes.jl#L224">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../WeierstrassGeneralBase/">« Global Weierstrass models</a><a class="docs-footer-nextpage" href="../TateGeneralBase/">Global Tate models without specified base space »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 09:02">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

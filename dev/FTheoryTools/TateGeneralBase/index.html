@@ -16,7 +16,7 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_polynomial(t)
 a10*x*y*z + a21*w*x^2*z^2 + a32*w^2*y*z^3 + a43*w^3*x*z^4 + a65*w^5*z^6 + x^3 - y^2
@@ -28,7 +28,7 @@ julia&gt; auxiliary_ambient_space(t)
 A normal toric variety
 
 julia&gt; dim(auxiliary_ambient_space(t))
-8</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/constructors.jl#L36">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a1-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a1-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a1</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a1(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_1$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+8</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/constructors.jl#L36">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a1-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a1-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a1</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a1(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_1$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -45,10 +45,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_section_a1(t)
-a10</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a2-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a2-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a2</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a2(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_2$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a10</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a2-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a2-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a2</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a2(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_2$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -65,10 +65,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_section_a2(t)
-a21*w</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L38">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a3-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a3-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a3</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a3(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_3$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a21*w</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L38">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a3-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a3-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a3</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a3(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_3$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -85,10 +85,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_section_a3(t)
-a32*w^2</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L71">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a4-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a4-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a4</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">a4(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_4$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a32*w^2</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L71">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a4-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a4-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a4</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">a4(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_4$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -105,10 +105,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_section_a4(t)
-a43*w^3</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L104">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a6-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a6-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a6</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a6(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_6$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a43*w^3</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L104">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_section_a6-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_section_a6-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_section_a6</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_section_a6(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate section <span>$a_6$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -125,10 +125,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_section_a6(t)
-a65*w^5</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L137">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_polynomial-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_polynomial-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_polynomial(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate polynomial of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a65*w^5</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L137">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.tate_polynomial-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.tate_polynomial-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.tate_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">tate_polynomial(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the Tate polynomial of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -145,10 +145,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; tate_polynomial(t)
-a10*x*y*z + a21*w*x^2*z^2 + a32*w^2*y*z^3 + a43*w^3*x*z^4 + a65*w^5*z^6 + x^3 - y^2</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L174">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.auxiliary_base_space-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.auxiliary_base_space-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.auxiliary_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">auxiliary_base_space(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the toric base space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+a10*x*y*z + a21*w*x^2*z^2 + a32*w^2*y*z^3 + a43*w^3*x*z^4 + a65*w^5*z^6 + x^3 - y^2</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L174">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.auxiliary_base_space-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.auxiliary_base_space-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.auxiliary_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">auxiliary_base_space(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the toric base space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -165,10 +165,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; auxiliary_base_space(t)
-A normal, affine, 6-dimensional toric variety</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L211">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.auxiliary_ambient_space-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.auxiliary_ambient_space-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.auxiliary_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">auxiliary_ambient_space(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the toric ambient space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+A normal, affine, 6-dimensional toric variety</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L211">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.auxiliary_ambient_space-Tuple{TateModelOverGeneralBaseSpace}" href="#FTheoryTools.auxiliary_ambient_space-Tuple{TateModelOverGeneralBaseSpace}"><code>FTheoryTools.auxiliary_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">auxiliary_ambient_space(t::TateModelOverGeneralBaseSpace)</code></pre><p>Return the toric ambient space of the global Tate model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; auxiliary_base_ring, (a10,a21,a32,a43,a65,w) = QQ[&quot;a10&quot;, &quot;a21&quot;, &quot;a32&quot;, &quot;a43&quot;, &quot;a65&quot;, &quot;w&quot;];
 
@@ -185,10 +185,10 @@ julia&gt; a6 = a65 * w^5;
 julia&gt; ais = [a1, a2, a3, a4, a6];
 
 julia&gt; t = GlobalTateModel(ais, auxiliary_base_ring)
-A global Tate model over a general base space
+A global Tate model over a not fully specified base
 
 julia&gt; auxiliary_ambient_space(t)
 A normal toric variety
 
 julia&gt; dim(auxiliary_ambient_space(t))
-8</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/TateModelsOverGeneralBaseSpace/attributes.jl#L244">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Tate/">« Global Tate models</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 08:46">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+8</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/TateModelsOverGeneralBaseSpace/attributes.jl#L244">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Tate/">« Global Tate models</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 09:02">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

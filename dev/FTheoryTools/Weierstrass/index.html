@@ -14,13 +14,13 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
 
 julia&gt; is_smooth(toric_ambient_space(w))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/constructors.jl#L30">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace-Tuple{}" href="#FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace-Tuple{}"><code>FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">GenericGlobalWeierstrassModelOverProjectiveSpace()</code></pre><p>This method constructs a global Weierstrass model over the 3-dimensional projective space.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/constructors.jl#L30">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace-Tuple{}" href="#FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace-Tuple{}"><code>FTheoryTools.GenericGlobalWeierstrassModelOverProjectiveSpace</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">GenericGlobalWeierstrassModelOverProjectiveSpace()</code></pre><p>This method constructs a global Weierstrass model over the 3-dimensional projective space.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; GenericGlobalWeierstrassModelOverProjectiveSpace()
-A global Weierstrass model</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/constructors.jl#L137">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.SpecificGlobalWeierstrassModel-Tuple{MPolyElem_dec{fmpq, fmpq_mpoly}, MPolyElem_dec{fmpq, fmpq_mpoly}, Oscar.AbstractNormalToricVariety}" href="#FTheoryTools.SpecificGlobalWeierstrassModel-Tuple{MPolyElem_dec{fmpq, fmpq_mpoly}, MPolyElem_dec{fmpq, fmpq_mpoly}, Oscar.AbstractNormalToricVariety}"><code>FTheoryTools.SpecificGlobalWeierstrassModel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">SpecificGlobalWeierstrassModel(f::MPolyElem_dec{fmpq, fmpq_mpoly}, g::MPolyElem_dec{fmpq, fmpq_mpoly}, base::Oscar.AbstractNormalToricVariety)</code></pre><p>This method operates analogously to <code>GenericGlobalWeierstrassModel(base::Oscar.AbstractNormalToricVariety)</code>. The only difference is that the Weierstrass sections <span>$f$</span> and <span>$g$</span> can be specified with non-generic values.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+A global Weierstrass model over a concrete base</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/constructors.jl#L137">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.SpecificGlobalWeierstrassModel-Tuple{MPolyElem_dec{fmpq, fmpq_mpoly}, MPolyElem_dec{fmpq, fmpq_mpoly}, Oscar.AbstractNormalToricVariety}" href="#FTheoryTools.SpecificGlobalWeierstrassModel-Tuple{MPolyElem_dec{fmpq, fmpq_mpoly}, MPolyElem_dec{fmpq, fmpq_mpoly}, Oscar.AbstractNormalToricVariety}"><code>FTheoryTools.SpecificGlobalWeierstrassModel</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">SpecificGlobalWeierstrassModel(f::MPolyElem_dec{fmpq, fmpq_mpoly}, g::MPolyElem_dec{fmpq, fmpq_mpoly}, base::Oscar.AbstractNormalToricVariety)</code></pre><p>This method operates analogously to <code>GenericGlobalWeierstrassModel(base::Oscar.AbstractNormalToricVariety)</code>. The only difference is that the Weierstrass sections <span>$f$</span> and <span>$g$</span> can be specified with non-generic values.</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -39,10 +39,10 @@ julia&gt; f = sum([rand(Int) * b for b in basis_of_global_sections(anticanonical
 julia&gt; g = sum([rand(Int) * b for b in basis_of_global_sections(anticanonical_bundle(base)^6)]);
 
 julia&gt; w = SpecificGlobalWeierstrassModel(f, g, base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
 
 julia&gt; is_smooth(toric_ambient_space(w))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/constructors.jl#L155">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_section_f-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_section_f-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_section_f</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_section_f(w::GlobalWeierstrassModel)</code></pre><p>Return the polynomial <span>$f$</span> used for the construction of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/constructors.jl#L155">source</a></section></article><h2 id="Attributes"><a class="docs-heading-anchor" href="#Attributes">Attributes</a><a id="Attributes-1"></a><a class="docs-heading-anchor-permalink" href="#Attributes" title="Permalink"></a></h2><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_section_f-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_section_f-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_section_f</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_section_f(w::GlobalWeierstrassModel)</code></pre><p>Return the polynomial <span>$f$</span> used for the construction of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -57,26 +57,9 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
 
-julia&gt; weierstrass_section_f(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_section_g-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_section_g-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_section_g</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_section_g(w::GlobalWeierstrassModel)</code></pre><p>Return the polynomial <span>$g$</span> used for the construction of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
-
-julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
-A normal toric variety
-
-julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
-A normal toric variety
-
-julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
-A normal toric variety
-
-julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
-A normal toric variety
-
-julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
-
-julia&gt; weierstrass_section_g(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/attributes.jl#L36">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_polynomial-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_polynomial-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_polynomial(w::GlobalWeierstrassModel)</code></pre><p>Return the Weierstrass polynomial of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+julia&gt; weierstrass_section_f(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L5">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_section_g-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_section_g-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_section_g</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_section_g(w::GlobalWeierstrassModel)</code></pre><p>Return the polynomial <span>$g$</span> used for the construction of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -91,9 +74,9 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
 
-julia&gt; weierstrass_polynomial(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/attributes.jl#L71">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_base_space-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.toric_base_space-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.toric_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_base_space(w::GlobalWeierstrassModel)</code></pre><p>Return the toric base space of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+julia&gt; weierstrass_section_g(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L36">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.weierstrass_polynomial-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.weierstrass_polynomial-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.weierstrass_polynomial</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">weierstrass_polynomial(w::GlobalWeierstrassModel)</code></pre><p>Return the Weierstrass polynomial of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -108,10 +91,44 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
+
+julia&gt; weierstrass_polynomial(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L71">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="AbstractAlgebra.discriminant-Tuple{GlobalWeierstrassModel}" href="#AbstractAlgebra.discriminant-Tuple{GlobalWeierstrassModel}"><code>AbstractAlgebra.discriminant</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">discriminant(w::GlobalWeierstrassModel)</code></pre><p>Return the discriminant <span>$\Delta = 4 f^3 + 27 g^2$</span>.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+
+julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
+A normal toric variety
+
+julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
+A normal toric variety
+
+julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
+A normal toric variety
+
+julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
+A normal toric variety
+
+julia&gt; w = GenericGlobalWeierstrassModel(base)
+A global Weierstrass model over a concrete base
+
+julia&gt; discriminant(w);</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L105">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_base_space-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.toric_base_space-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.toric_base_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_base_space(w::GlobalWeierstrassModel)</code></pre><p>Return the toric base space of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+
+julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
+A normal toric variety
+
+julia&gt; test_space1 = blowup_on_ith_minimal_torus_orbit(test_space,1,&quot;e1&quot;)
+A normal toric variety
+
+julia&gt; test_space2 = blowup_on_ith_minimal_torus_orbit(test_space1,1,&quot;e2&quot;)
+A normal toric variety
+
+julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
+A normal toric variety
+
+julia&gt; w = GenericGlobalWeierstrassModel(base)
+A global Weierstrass model over a concrete base
 
 julia&gt; is_smooth(toric_base_space(w))
-true</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/attributes.jl#L105">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_ambient_space-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.toric_ambient_space-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.toric_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_ambient_space(w::GlobalWeierstrassModel)</code></pre><p>Return the toric base space of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
+true</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L139">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="FTheoryTools.toric_ambient_space-Tuple{GlobalWeierstrassModel}" href="#FTheoryTools.toric_ambient_space-Tuple{GlobalWeierstrassModel}"><code>FTheoryTools.toric_ambient_space</code></a> — <span class="docstring-category">Method</span></header><section><div><pre><code class="language-julia hljs">toric_ambient_space(w::GlobalWeierstrassModel)</code></pre><p>Return the toric base space of the global Weierstrass model.</p><pre><code class="language-julia-repl hljs">julia&gt; using Oscar
 
 julia&gt; test_space = hirzebruch_surface(2) * projective_space(NormalToricVariety,1)
 A normal toric variety
@@ -126,7 +143,7 @@ julia&gt; base = blowup_on_ith_minimal_torus_orbit(test_space2,1,&quot;e3&quot;)
 A normal toric variety
 
 julia&gt; w = GenericGlobalWeierstrassModel(base)
-A global Weierstrass model
+A global Weierstrass model over a concrete base
 
 julia&gt; is_smooth(toric_ambient_space(w))
-false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/3bcff9c919a0ce4fcc0ecfd3c3264499bd054ecf/src/WeierstrassModels/attributes.jl#L136">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Introduction/">« Overview</a><a class="docs-footer-nextpage" href="../WeierstrassGeneralBase/">Global Weierstrass models »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 08:46">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+false</code></pre></div><a class="docs-sourcelink" target="_blank" href="https://github.com/Julia-meets-String-Theory/FTheoryTools.jl/blob/5b70678afe88519055b960112ebefc22c9756b30/src/WeierstrassModels/attributes.jl#L170">source</a></section></article></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Introduction/">« Overview</a><a class="docs-footer-nextpage" href="../WeierstrassGeneralBase/">Global Weierstrass models »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.23 on <span class="colophon-date" title="Friday 11 November 2022 09:02">Friday 11 November 2022</span>. Using Julia version 1.6.7.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
