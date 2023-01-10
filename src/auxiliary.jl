@@ -118,3 +118,94 @@ function TestBase()
     return NormalToricVariety(PolyhedralFan(rays, cones))
 end
 export TestBase
+
+################################################################
+# 6: Compute singularity Kodaira type and refined Tate type
+################################################################
+
+# TODO 1: The below assumes that the singular locus is given by
+#         a single coordinate
+# TODO 2: This code multiplies out an overall coefficient to better check for perfect squares,
+#         but can't properly factor cubics over the complexes, hence the ambiguity for I^*_0.
+#         An alternative approach for squares is to factor and then look at the values of the
+#         resulting dictionary
+function _kodaira_type(id::MPolyIdeal{MPolyElem_dec{fmpq, fmpq_mpoly}}, f::MPolyElem{fmpq}, g::MPolyElem{fmpq}, d::MPolyElem{fmpq}, ords::Tuple{Int64, Int64, Int64})
+    f_ord = ords[1]
+    g_ord = ords[2]
+    d_ord = ords[3]
+
+    poly_f = f.f
+    poly_g = g.f
+    poly_d = d.f
+    locus = id.gens[1].f
+
+    if d_ord == 0
+        kod_type = "I_0"
+    elseif d_ord == 1 && f_ord == 0 && g_ord == 0
+        kod_type = "I_1"
+    elseif f_ord == 0 && g_ord == 0
+        monodromy_poly = divexact(evaluate(9 * poly_g, [locus], [0]), evaluate(2 * poly_f, [locus], [0]))
+        monodromy_poly *= monodromy_poly.content_den // monodromy_poly.content_num
+        if is_square(monodromy_poly)
+            kod_type = "Split I_$d_ord"
+        else
+            kod_type = "Non-split I_$d_ord"
+        end
+    elseif d_ord == 2 && g_ord == 1 && f_ord >= 1
+        kod_type = "II"
+    elseif d_ord == 3 && f_ord == 1 && g_ord >= 2
+        kod_type = "III"
+    elseif d_ord == 4 && g_ord == 2 && f_ord >= 2
+        monodromy_poly = evaluate(divexact(poly_g, locus^2), [locus], [0])
+        monodromy_poly *= monodromy_poly.content_den // monodromy_poly.content_num
+        if is_square(monodromy_poly)
+            kod_type = "Split IV"
+        else
+            kod_type = "Non-split IV"
+        end
+    elseif d_ord == 6 && f_ord >= 2 && g_ord >= 3
+        # Using locus here is a trick to avoid defining a new polynomial ring
+        # It probably won't work once the issue of locus being a single coordinate is addressed
+        monodromy_poly =  locus^3 + locus * evaluate(divexact(poly_f, locus^2), [locus], [0]) + evaluate(divexact(poly_g, locus^3), [locus], [0])
+        num_facs = length(factor(monodromy_poly).fac)
+        if num_facs == 3
+            kod_type = "Split I^*_0"
+        elseif num_facs == 2
+            kod_type = "Semi-split or split I^*_0"
+        else
+            kod_type = "Non-split, semi-split, or split I^*_0"
+        end
+    elseif f_ord == 2 && g_ord == 2 && d_ord >= 7 && d_ord % 2 == 1
+        monodromy_poly = evaluate(divexact(poly_d, locus^d_ord) * divexact(evaluate(divexact(2 * poly_f, locus^2), [locus], [0]), evaluate(divexact(9 * poly_g, locus^3), [locus], [0]))^3, [locus], [0]) / 4
+        monodromy_poly *= monodromy_poly.content_den // monodromy_poly.content_num
+        if is_square(monodromy_poly)
+            kod_type = "Split I^*_$(d_ord - 2)"
+        else
+            kod_type = "Non-split I^*_$(d_ord - 2)"
+        end
+    elseif f_ord == 2 && g_ord == 2 && d_ord >= 8 && d_ord % 2 == 0
+        monodromy_poly = evaluate(divexact(poly_d, locus^d_ord) * divexact(evaluate(divexact(2 * poly_f, locus^2), [locus], [0]), evaluate(divexact(9 * poly_g, locus^3), [locus], [0]))^2, [locus], [0])
+        monodromy_poly *= monodromy_poly.content_den // monodromy_poly.content_num
+        if is_square(monodromy_poly)
+            kod_type = "Split I^*_$(d_ord - 2)"
+        else
+            kod_type = "Non-split I^*_$(d_ord - 2)"
+        end
+    elseif d_ord == 8 && g_ord == 4 && f_ord >= 3
+        monodromy_poly = evaluate(divexact(poly_g, locus^4), [locus], [0])
+        monodromy_poly *= monodromy_poly.content_den // monodromy_poly.content_num
+        if is_square(monodromy_poly)
+            kod_type = "Split IV^*"
+        else
+            kod_type = "Non-split IV^*"
+        end
+    elseif d_ord == 9 && f_ord == 3 && g_ord >= 5
+        kod_type = "III^*"
+    elseif d_ord == 10 && g_ord == 5 && f_ord >= 4
+        kod_type = "II^*"
+    elseif d_ord >= 12 && f_ord >= 4 && g_ord >= 6
+        kod_type = "Non-minimal"
+    end
+    
+    return kod_type
+end
