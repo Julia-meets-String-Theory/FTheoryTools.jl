@@ -1,5 +1,10 @@
 # Welcome to FTheoryTools
 
+## Status
+
+This project has been integrated into [OSCAR](https://oscar.computeralgebra.de/). Future development will therefore happen in the [OSCAR repository](https://github.com/oscar-system/Oscar.jl). More information is available in the latest OSCAR documentation. See [here](https://docs.oscar-system.org/dev/) for the documentation of the latest development version. The documentation of the latest stable release is available [here](https://docs.oscar-system.org/stable/).
+
+
 ## Goal
 
 The package FTheoryTools.jl aims to automate a number of recurring and (at least in part) tedious computations in F-theory model building
@@ -22,9 +27,6 @@ We aim for the following workflow:
     * Gauge group,
     * Topological data (e.g., Euler number).
 
-## Status
-
-This project just began. We hope to have a first working version by the end of the year 2022.
 
 ## Possible future extensions
 
